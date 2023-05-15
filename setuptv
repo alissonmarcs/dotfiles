@@ -1,0 +1,27 @@
+#!/bin/bash
+
+setup_on()
+{
+	xrandr --output HDMI-1 --auto --left-of eDP-1
+	pacmd set-card-profile 0 output:hdmi-stereo
+	sed -i 's/analog/hdmi/' ~/.config/i3status/config	
+}
+
+setup_off()
+{
+	xrandr --output HDMI-1 --off
+	pacmd set-card-profile 0 output:analog-stereo+input:analog-stereo
+	sed -i 's/hdmi/analog/' ~/.config/i3status/config
+}
+
+case $1 in
+	"-on")
+		setup_on
+		;;
+	"-off")
+		setup_off
+		;;
+	*)
+		echo "option '$1' don't recognized"
+		;;
+esac
