@@ -1,0 +1,9 @@
+#include "{class_name}.{header_file_extension}"
+
+{class_name}::{class_name}() {{}}
+
+{class_name}::{class_name}(const {class_name} &other) {{}}
+
+{class_name} &{class_name}::operator=(const {class_name} &other) {{return *this;}}
+
+{class_name}::~{class_name}() {{}}
