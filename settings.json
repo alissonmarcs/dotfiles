@@ -1,0 +1,81 @@
+{
+"files.exclude": {
+  "**/obj": true,
+  "**/.git": true,
+  "**/.vscode": true,
+  "**/bin": true,
+},
+"search.exclude": {
+  "**/obj": true,
+  "**/.git": true,
+  "**/.vscode": true,
+  "**/bin": true,
+},
+"C_Cpp.files.exclude": {
+    "**/obj": true,
+  "**/.git": true,
+    "**/.vscode": true,
+  "**/bin": true,
+},
+"extensions.ignoreRecommendations": true,
+"telemetry.telemetryLevel": "off",
+"extensions.autoCheckUpdates": false,
+"update.mode": "none",
+"extensions.autoUpdate": false,
+"vim.useCtrlKeys": true,
+"vim.handleKeys": {
+  "<C-d>": false,
+  "<C-f>": false,
+  "<C-w>": false,
+  "<C-b>": false,
+  "<C-n>": false,
+  "<C-j>": false,
+  "<C-s>": false,
+  "<C-t>": false,
+  "<C-p>": false,
+},
+"vim.useSystemClipboard": false,
+"vim.normalModeKeyBindingsNonRecursive": [
+    {
+        "before": ["J"],
+        "commands": ["workbench.action.previousEditor"]
+    },
+    {
+        "before": ["K"],
+        "commands": ["workbench.action.nextEditor"]
+    }
+],
+"settingsSync.keybindingsPerPlatform": false,
+"C_Cpp.clang_format_fallbackStyle": "GNU",
+"editor.lineNumbers": "relative",
+"files.autoSave": "onFocusChange",
+"terminal.integrated.defaultProfile.linux": "bash",
+"git.openRepositoryInParentFolders": "never",
+"files.associations": {
+    "*.tpp": "cpp"
+},
+"terminal.integrated.enablePersistentSessions": false,
+"C_Cpp.autocompleteAddParentheses": true,
+"C_Cpp.default.cppStandard": "c++98",
+"github.copilot.enable": {
+  "*": false,
+  "plaintext": false,
+  "markdown": false,
+  "scminput": false
+},
+"editor.minimap.enabled": false,
+"extensions.experimental.affinity": {
+  "vscodevim.vim": 1,
+  "ms-vscode.cpptools": 1,
+},
+"editor.stickyScroll.enabled": false,
+"cpp.creator.headerFileNamePreset": "{{*CLASSNAME*}}.hpp",
+"cpp.creator.setPath": true,
+"cpp.creator.headerFileContentPreset": "#ifndef {{*CLASSNAMEUPPER*}}_H\n#define {{*CLASSNAMEUPPER*}}_H\n\nclass {{*CLASSNAME*}}\n{\npublic:\n    {{*CLASSNAME*}} ();\n    ~{{*CLASSNAME*}} ();\n    {{*CLASSNAME*}} (const {{*CLASSNAME*}} & src);\n\nprivate:\n\n};\n\n#endif",
+"cpp.creator.sourceFileContentPreset": "#include \"{{*HEADERFILENAME*}}\"\n\n{{*CLASSNAME*}}::{{*CLASSNAME*}} ()\n{\n\n}\n\n{{*CLASSNAME*}}::{{*CLASSNAME*}} (const {{*CLASSNAME*}} & src)\n{\n    (void) src;\n}\n\n{{*CLASSNAME*}}::~{{*CLASSNAME*}} ()\n{\n\n}",
+"C_Cpp.intelliSenseCachePath": "${workspaceFolder}/.vscode/",
+"C_Cpp.intelliSenseCacheSize": 400,
+"editor.unicodeHighlight.invisibleCharacters": false,
+"editor.unicodeHighlight.ambiguousCharacters": false,
+"editor.renderWhitespace": "all",
+}
