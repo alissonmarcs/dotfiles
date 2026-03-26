@@ -13,3 +13,12 @@ alias copy="xclip -selection clipboard"
 
 export EDITOR="/usr/bin/vim"
 
+add_to_path() {
+  case ":$PATH:" in
+    *":$1:"*) ;;
+    *) export PATH="$PATH:$1" ;;
+  esac
+}
+
+add_to_path "$HOME/.local/bin"
+add_to_path "$HOME/bin"
