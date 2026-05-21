@@ -2,7 +2,25 @@
 
 [[ $- != *i* ]] && return
 
-PS1=" \001\033[1;36m\002\w\001\033[0m\002 \001\033[1;37m\002($USER)\001\033[0m\002 \n $ "
+parse_git_branch() {
+
+    if [ ! -d .git ]; then
+            return
+    fi
+
+    local head
+    head=$(< .git/HEAD) || return
+    case "$head" in
+        ref:\ refs/heads/*)
+            echo "${head#ref: refs/heads/}"
+            ;;
+        *)
+            echo "(detached)"
+            ;;
+    esac
+}
+
+PS1=" \001\033[1;36m\002\w\001\033[0m\002 \001\033[1;37m\002($USER) $(parse_git_branch) \001\033[0m\002 \n $ "
 
 # command
 alias ls="ls -t --color=auto"
