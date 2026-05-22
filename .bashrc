@@ -3,19 +3,29 @@
 [[ $- != *i* ]] && return
 
 parse_git_branch() {
+    local folder=""
+    local path
 
-    if [ ! -d .git ]; then
-            return
+    for path in "${git_paths[@]}"; do
+        if [ -d "$path" ]; then
+            folder="$path"
+            break
+        fi
+    done
+
+    if [[ -z "$folder" ]]; then
+        return
     fi
 
     local head
-    head=$(< .git/HEAD) || return
+    head=$(< "${folder}/HEAD")
+
     case "$head" in
-        ref:\ refs/heads/*)
-            echo "${head#ref: refs/heads/}"
+        "ref: refs/heads/"*)
+            echo "[branch ${head#ref: refs/heads/}]"
             ;;
         *)
-            echo "(detached)"
+            echo "[detached]"
             ;;
     esac
 }
