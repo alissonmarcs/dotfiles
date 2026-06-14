@@ -3,6 +3,9 @@
 [[ $- != *i* ]] && return
 
 parse_git_branch() {
+
+    readonly git_paths=("./.git/" "../.git/" "../../.git/" "../../../.git/" "../../../../.git/")
+
     local folder=""
     local path
 
@@ -30,7 +33,7 @@ parse_git_branch() {
     esac
 }
 
-PS1=" \001\033[1;36m\002\w\001\033[0m\002 \001\033[1;37m\002($USER) $(parse_git_branch) \001\033[0m\002 \n $ "
+PS1=' \001\033[1;36m\002\w\001\033[0m\002 \001\033[1;37m\002($USER) $(parse_git_branch) \001\033[0m\002 \n $ '
 
 # command
 alias ls="ls -t --color=auto"
